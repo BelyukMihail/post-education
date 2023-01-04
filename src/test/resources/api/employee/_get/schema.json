@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "$id": "http://example.com/example.json",
+  "type": "object",
+  "default": {},
+  "title": "Root Schema",
+  "required": [
+    "status",
+    "data",
+    "message"
+  ],
+  "properties": {
+    "status": {
+      "type": "string",
+      "default": "",
+      "title": "The status Schema"
+    },
+    "data": {
+      "type": "array",
+      "default": [],
+      "title": "The data Schema",
+      "items": {
+        "type": "object",
+        "title": "A Schema",
+        "required": [
+          "id",
+          "employee_name",
+          "employee_salary",
+          "employee_age",
+          "profile_image"
+        ],
+        "properties": {
+          "id": {
+            "type": "integer",
+            "title": "The id Schema"
+          },
+          "employee_name": {
+            "type": "string",
+            "title": "The employee_name Schema"
+          },
+          "employee_salary": {
+            "type": "integer",
+            "title": "The employee_salary Schema"
+          },
+          "employee_age": {
+            "type": "integer",
+            "title": "The employee_age Schema"
+          },
+          "profile_image": {
+            "type": "string",
+            "title": "The profile_image Schema"
+          }
+        }
+      }
+    },
+    "message": {
+      "type": "string",
+      "default": "",
+      "title": "The message Schema"
+    }
+  }
+}
