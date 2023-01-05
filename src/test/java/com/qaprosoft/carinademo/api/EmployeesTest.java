@@ -13,10 +13,10 @@ public class EmployeesTest {
 
     {
         try {
-            FileInputStream fileInputStream = new FileInputStream("src/test/resources/api/employee/employee.properties");
+            FileInputStream fileInputStream = new FileInputStream("src/test/resources/api/testdata.properties");
             properties.load(fileInputStream);
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            throw new RuntimeException("Failed to load testdata.properties", e);
         }
     }
 
@@ -37,21 +37,23 @@ public class EmployeesTest {
     @Test
     public void createEmployeeTest() {
         PostEmployeeMethod postEmployeeMethod = new PostEmployeeMethod();
-        JsonComparatorContext comparatorContext = JsonComparatorContext.context().<Integer>withPredicate("idPredicate", id -> id > 0);
+        JsonComparatorContext comparatorContext = JsonComparatorContext.context()
+                .<Integer>withPredicate("idPredicate", id -> id > 0);
         postEmployeeMethod.callAPI();
         postEmployeeMethod.validateResponse(comparatorContext);
     }
 
     @Test
     public void updateEmployeeTest() {
-        PutEmployeeMethod putEmployeeMethod = new PutEmployeeMethod("id_update");
+        PutEmployeeMethod putEmployeeMethod = new PutEmployeeMethod(properties.getProperty("id_update"));
         putEmployeeMethod.callAPIExpectSuccess();
         putEmployeeMethod.validateResponse();
     }
 
     @Test
     public void deleteEmployeeTest() {
-        DeleteEmployeeMethod deleteEmployeeMethod = new DeleteEmployeeMethod("id_delete");
+        DeleteEmployeeMethod deleteEmployeeMethod = new DeleteEmployeeMethod(properties.getProperty("id_delete"));
         deleteEmployeeMethod.callAPIExpectSuccess();
+        deleteEmployeeMethod.validateResponse();
     }
 }
