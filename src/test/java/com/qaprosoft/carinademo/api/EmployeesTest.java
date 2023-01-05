@@ -1,24 +1,10 @@
 package com.qaprosoft.carinademo.api;
 
 import com.qaprosoft.apitools.validation.JsonComparatorContext;
+import com.zebrunner.carina.utils.R;
 import org.testng.annotations.Test;
 
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.util.Properties;
-
 public class EmployeesTest {
-
-    public Properties properties = new Properties();
-
-    {
-        try {
-            FileInputStream fileInputStream = new FileInputStream("src/test/resources/api/testdata.properties");
-            properties.load(fileInputStream);
-        } catch (IOException e) {
-            throw new RuntimeException("Failed to load testdata.properties", e);
-        }
-    }
 
     @Test
     public void getAllEmployeesTest() {
@@ -29,7 +15,7 @@ public class EmployeesTest {
 
     @Test
     public void getEmployeeTest() {
-        GetEmployeeMethod getEmployeeMethod = new GetEmployeeMethod(properties.getProperty("id_get"));
+        GetEmployeeMethod getEmployeeMethod = new GetEmployeeMethod(R.TESTDATA.get("id_get"));
         getEmployeeMethod.callAPI();
         getEmployeeMethod.validateResponse();
     }
@@ -45,14 +31,14 @@ public class EmployeesTest {
 
     @Test
     public void updateEmployeeTest() {
-        PutEmployeeMethod putEmployeeMethod = new PutEmployeeMethod(properties.getProperty("id_update"));
+        PutEmployeeMethod putEmployeeMethod = new PutEmployeeMethod(R.TESTDATA.get("id_update"));
         putEmployeeMethod.callAPIExpectSuccess();
         putEmployeeMethod.validateResponse();
     }
 
     @Test
     public void deleteEmployeeTest() {
-        DeleteEmployeeMethod deleteEmployeeMethod = new DeleteEmployeeMethod(properties.getProperty("id_delete"));
+        DeleteEmployeeMethod deleteEmployeeMethod = new DeleteEmployeeMethod(R.TESTDATA.get("id_delete"));
         deleteEmployeeMethod.callAPIExpectSuccess();
         deleteEmployeeMethod.validateResponse();
     }
