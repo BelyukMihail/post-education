@@ -9,11 +9,11 @@ import com.qaprosoft.carina.core.foundation.api.http.HttpResponseStatusType;
 import com.zebrunner.carina.utils.Configuration;
 
 @Endpoint(url = "${base_url}/employees", methodType = HttpMethodType.GET)
-@ResponseTemplatePath(path="api/employees/_get/rs.json")
+@ResponseTemplatePath(path = "api/employees/_get/rs.json")
 @SuccessfulHttpStatus(status = HttpResponseStatusType.OK_200)
-public class GetAllEmployeesMethod  extends AbstractApiMethodV2 {
+public class GetAllEmployeesMethod extends AbstractApiMethodV2 {
 
     public GetAllEmployeesMethod() {
-     replaceUrlPlaceholder("base_url", Configuration.getEnvArg("dummy_url"));
+        replaceUrlPlaceholder("base_url", Configuration.getEnvArg("dummy_url"));
     }
 }

@@ -3,10 +3,22 @@ package com.qaprosoft.carinademo.api;
 import com.qaprosoft.apitools.validation.JsonComparatorContext;
 import org.testng.annotations.Test;
 
-import java.util.Objects;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.Properties;
 
 public class EmployeesTest {
+
+    public Properties properties = new Properties();
+
+    {
+        try {
+            FileInputStream fileInputStream = new FileInputStream("src/test/resources/api/employee/employee.properties");
+            properties.load(fileInputStream);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
     @Test
     public void getAllEmployeesTest() {
@@ -17,9 +29,7 @@ public class EmployeesTest {
 
     @Test
     public void getEmployeeTest() {
-        Long id = 1L;
-        String stringId = String.valueOf(id);
-        GetEmployeeMethod getEmployeeMethod = new GetEmployeeMethod(stringId);
+        GetEmployeeMethod getEmployeeMethod = new GetEmployeeMethod(properties.getProperty("id_get"));
         getEmployeeMethod.callAPI();
         getEmployeeMethod.validateResponse();
     }
@@ -34,18 +44,14 @@ public class EmployeesTest {
 
     @Test
     public void updateEmployeeTest() {
-        Long id = 21L;
-        String stringId = String.valueOf(id);
-        PutEmployeeMethod putEmployeeMethod = new PutEmployeeMethod(stringId);
+        PutEmployeeMethod putEmployeeMethod = new PutEmployeeMethod("id_update");
         putEmployeeMethod.callAPIExpectSuccess();
         putEmployeeMethod.validateResponse();
     }
 
     @Test
     public void deleteEmployeeTest() {
-        Long id = 1L;
-        String stringId = String.valueOf(id);
-        DeleteEmployeeMethod deleteEmployeeMethod = new DeleteEmployeeMethod(stringId);
+        DeleteEmployeeMethod deleteEmployeeMethod = new DeleteEmployeeMethod("id_delete");
         deleteEmployeeMethod.callAPIExpectSuccess();
     }
 }

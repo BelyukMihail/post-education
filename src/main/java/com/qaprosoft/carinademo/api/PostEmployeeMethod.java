@@ -9,9 +9,9 @@ import com.qaprosoft.carina.core.foundation.api.http.HttpMethodType;
 import com.qaprosoft.carina.core.foundation.api.http.HttpResponseStatusType;
 import com.zebrunner.carina.utils.Configuration;
 
-@Endpoint(url="${base_url}/create", methodType = HttpMethodType.POST)
-@RequestTemplatePath(path="api/employee/_post/rq.json")
-@ResponseTemplatePath(path="api/employee/_post/rs.json")
+@Endpoint(url = "${base_url}/create", methodType = HttpMethodType.POST)
+@RequestTemplatePath(path = "api/employee/_post/rq.json")
+@ResponseTemplatePath(path = "api/employee/_post/rs.json")
 @SuccessfulHttpStatus(status = HttpResponseStatusType.CREATED_201)
 public class PostEmployeeMethod extends AbstractApiMethodV2 {
 

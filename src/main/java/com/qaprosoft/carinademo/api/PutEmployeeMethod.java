@@ -14,9 +14,10 @@ import com.zebrunner.carina.utils.Configuration;
 @ResponseTemplatePath(path = "api/employee/_put/rs.json")
 @SuccessfulHttpStatus(status = HttpResponseStatusType.OK_200)
 public class PutEmployeeMethod extends AbstractApiMethodV2 {
+
     public PutEmployeeMethod(String id) {
         super("api/employee/_put/rq.json", "api/employee/_put/rs.json");
         replaceUrlPlaceholder("base_url", Configuration.getEnvArg("dummy_url"));
-        replaceUrlPlaceholder("id",id);
+        replaceUrlPlaceholder("id", id);
     }
 }
