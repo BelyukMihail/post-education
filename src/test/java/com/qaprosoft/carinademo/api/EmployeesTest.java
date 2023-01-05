@@ -1,10 +1,8 @@
 package com.qaprosoft.carinademo.api;
 
 import com.qaprosoft.apitools.validation.JsonComparatorContext;
+import com.zebrunner.carina.utils.R;
 import org.testng.annotations.Test;
-
-import java.util.Objects;
-import java.util.Properties;
 
 public class EmployeesTest {
 
@@ -17,9 +15,7 @@ public class EmployeesTest {
 
     @Test
     public void getEmployeeTest() {
-        Long id = 1L;
-        String stringId = String.valueOf(id);
-        GetEmployeeMethod getEmployeeMethod = new GetEmployeeMethod(stringId);
+        GetEmployeeMethod getEmployeeMethod = new GetEmployeeMethod(R.TESTDATA.get("id_get"));
         getEmployeeMethod.callAPI();
         getEmployeeMethod.validateResponse();
     }
@@ -27,25 +23,23 @@ public class EmployeesTest {
     @Test
     public void createEmployeeTest() {
         PostEmployeeMethod postEmployeeMethod = new PostEmployeeMethod();
-        JsonComparatorContext comparatorContext = JsonComparatorContext.context().<Integer>withPredicate("idPredicate", id -> id > 0);
+        JsonComparatorContext comparatorContext = JsonComparatorContext.context()
+                .<Integer>withPredicate("idPredicate", id -> id > 0);
         postEmployeeMethod.callAPI();
         postEmployeeMethod.validateResponse(comparatorContext);
     }
 
     @Test
     public void updateEmployeeTest() {
-        Long id = 21L;
-        String stringId = String.valueOf(id);
-        PutEmployeeMethod putEmployeeMethod = new PutEmployeeMethod(stringId);
+        PutEmployeeMethod putEmployeeMethod = new PutEmployeeMethod(R.TESTDATA.get("id_update"));
         putEmployeeMethod.callAPIExpectSuccess();
         putEmployeeMethod.validateResponse();
     }
 
     @Test
     public void deleteEmployeeTest() {
-        Long id = 1L;
-        String stringId = String.valueOf(id);
-        DeleteEmployeeMethod deleteEmployeeMethod = new DeleteEmployeeMethod(stringId);
+        DeleteEmployeeMethod deleteEmployeeMethod = new DeleteEmployeeMethod(R.TESTDATA.get("id_delete"));
         deleteEmployeeMethod.callAPIExpectSuccess();
+        deleteEmployeeMethod.validateResponse();
     }
 }
