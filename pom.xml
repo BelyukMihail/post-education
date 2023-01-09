@@ -20,19 +20,19 @@
 		<suite>helloWorld</suite>
 	</properties>
 
-<!--	<repositories>-->
-<!--		<repository>-->
-<!--			<id>zebrunner_snapshots</id>-->
-<!--			<name>zebrunner Snapshots</name>-->
-<!--			<url>https://nexus.zebrunner.dev/repository/ce-snapshots/</url>-->
-<!--			<releases>-->
-<!--				<enabled>false</enabled>-->
-<!--			</releases>-->
-<!--			<snapshots>-->
-<!--				<enabled>true</enabled>-->
-<!--			</snapshots>-->
-<!--		</repository>-->
-<!--	</repositories>-->
+		<repositories>
+			<repository>
+				<id>zebrunner_snapshots</id>
+				<name>zebrunner Snapshots</name>
+				<url>https://nexus.zebrunner.dev/repository/ce-snapshots/</url>
+				<releases>
+					<enabled>false</enabled>
+				</releases>
+				<snapshots>
+					<enabled>true</enabled>
+				</snapshots>
+			</repository>
+		</repositories>
 
 	<dependencies>
 		<dependency>
