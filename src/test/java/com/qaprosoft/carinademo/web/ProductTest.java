@@ -21,7 +21,7 @@ public class ProductTest extends SauceDemoWebTest {
         String homePageDescription;
         String productPageDescription;
         SoftAssert softAssert = new SoftAssert();
-        for (int i = items.size() - 1; i != -1; i--) {
+        for (int i = 0; i <= items.size() - 1; i++) {
             homePageDescription = items.get(i).getItemDescription();
             ProductPage productPage = items.get(i).clickItemName();
             productPageDescription = productPage.getItemDescription();
