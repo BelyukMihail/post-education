@@ -19,7 +19,6 @@ public class Item extends AbstractUIObject {
         super(driver, searchContext);
     }
 
-
     public String getItemDescription() {
         return itemDescription.getText();
     }
