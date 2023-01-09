@@ -21,17 +21,21 @@ public class LoginPage extends AbstractPage {
         open();
     }
 
-    public void enterName(String name){
+    public void enterName(String name) {
         userNameField.type(name);
     }
 
-    public void enterPassword(String password){
+    public void enterPassword(String password) {
         passwordField.type(password);
+    }
+
+    public void clickLoginButton() {
+        loginBtn.click();
     }
 
     public void authenticate(String name, String password) {
         enterName(name);
         enterPassword(password);
-        loginBtn.click();
+        clickLoginButton();
     }
 }
