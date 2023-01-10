@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Sauce Suite" parallel="methods" thread-count="5">
+    <test name="All tests">
+        <classes>
+            <class name="com.qaprosoft.carinademo.web.AuthenticationTest"/>
+            <class name="com.qaprosoft.carinademo.web.CheckoutTest"/>
+            <class name="com.qaprosoft.carinademo.web.MenuTest"/>
+            <class name="com.qaprosoft.carinademo.web.ProductTest">
+                <methods>
+                    <exclude name="compareItemDescriptionTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
