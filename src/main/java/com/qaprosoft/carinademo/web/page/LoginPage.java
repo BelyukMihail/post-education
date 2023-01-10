@@ -29,13 +29,14 @@ public class LoginPage extends AbstractPage {
         passwordField.type(password);
     }
 
-    public void clickLoginButton() {
+    public HomePage clickLoginButton() {
         loginBtn.click();
+        return new HomePage(getDriver());
     }
 
-    public void authenticate(String name, String password) {
+    public HomePage authenticate(String name, String password) {
         enterName(name);
         enterPassword(password);
-        clickLoginButton();
+        return clickLoginButton();
     }
 }
