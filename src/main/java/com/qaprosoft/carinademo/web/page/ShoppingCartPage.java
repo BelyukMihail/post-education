@@ -2,7 +2,7 @@ package com.qaprosoft.carinademo.web.page;
 
 import com.qaprosoft.carina.core.foundation.webdriver.decorator.ExtendedWebElement;
 import com.qaprosoft.carina.core.gui.AbstractPage;
-import com.qaprosoft.carinademo.web.uiobject.ShoppingCartItem;
+import com.qaprosoft.carinademo.web.uiobject.ShoppingCartProductItem;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 
@@ -11,7 +11,7 @@ import java.util.List;
 public class ShoppingCartPage extends AbstractPage {
 
     @FindBy(xpath = "//*[@class='cart_item']")
-    private List<ShoppingCartItem> cartItems;
+    private List<ShoppingCartProductItem> cartItems;
 
     @FindBy(xpath = "//*[@id='checkout']")
     private ExtendedWebElement checkoutBtn;
@@ -24,7 +24,7 @@ public class ShoppingCartPage extends AbstractPage {
         setUiLoadedMarker(pageTitle);
     }
 
-    public List<ShoppingCartItem> getCartItems() {
+    public List<ShoppingCartProductItem> getCartItems() {
         return cartItems;
     }
 

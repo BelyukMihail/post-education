@@ -5,7 +5,7 @@ import com.qaprosoft.carina.core.gui.AbstractPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 
-import static com.qaprosoft.carinademo.web.page.Attribute.VALUE;
+import static com.qaprosoft.carinademo.web.page.ElementAttribute.VALUE;
 
 public class CheckoutStepOnePage extends AbstractPage {
 
@@ -42,15 +42,15 @@ public class CheckoutStepOnePage extends AbstractPage {
     }
 
     public String getEnteredFirstName() {
-        return firstNameField.getAttribute(VALUE);
+        return firstNameField.getAttribute(VALUE.getDisplayName());
     }
 
     public String getEnteredLastName() {
-        return lastNameField.getAttribute(VALUE);
+        return lastNameField.getAttribute(VALUE.getDisplayName());
     }
 
     public String getEnteredPostalCode() {
-        return postalCodeField.getAttribute(VALUE);
+        return postalCodeField.getAttribute(VALUE.getDisplayName());
     }
 
     public CheckoutStepTwoPage clickContinueBtn() {

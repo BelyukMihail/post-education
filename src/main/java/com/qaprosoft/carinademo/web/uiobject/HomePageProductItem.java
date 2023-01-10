@@ -8,7 +8,7 @@ import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 
-public class HomePageItem extends AbstractUIObject {
+public class HomePageProductItem extends AbstractUIObject {
 
     @FindBy(xpath = ".//*[@class='inventory_item_name']")
     private ExtendedWebElement itemName;
@@ -19,7 +19,7 @@ public class HomePageItem extends AbstractUIObject {
     @FindBy(xpath = ".//*[contains(text(),'Add to cart')]")
     private ExtendedWebElement addToCartBtn;
 
-    public HomePageItem(WebDriver driver, SearchContext searchContext) {
+    public HomePageProductItem(WebDriver driver, SearchContext searchContext) {
         super(driver, searchContext);
     }
 

@@ -6,5 +6,6 @@ import com.qaprosoft.carinademo.web.util.AuthService;
 public class SauceDemoWebTest implements IAbstractTest {
 
     protected AuthService authService = new AuthService();
+    protected int productCount = 5;
 
 }

@@ -3,8 +3,9 @@ package com.qaprosoft.carinademo.web;
 import com.qaprosoft.carinademo.web.page.HomePage;
 import com.qaprosoft.carinademo.web.page.ProductPage;
 import com.qaprosoft.carinademo.web.page.ShoppingCartPage;
-import com.qaprosoft.carinademo.web.uiobject.HomePageItem;
-import com.qaprosoft.carinademo.web.uiobject.ShoppingCartItem;
+import com.qaprosoft.carinademo.web.uiobject.HomePageProductItem;
+import com.qaprosoft.carinademo.web.uiobject.ShoppingCartProductItem;
+import com.qaprosoft.carinademo.web.util.AddProductsToCartService;
 import com.zebrunner.carina.utils.R;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -17,13 +18,13 @@ public class ProductTest extends SauceDemoWebTest {
     @Test
     public void compareItemDescriptionTest() {
         HomePage homePage = authService.login(R.TESTDATA.get("user_name_good"), R.TESTDATA.get("password"));
-        List<HomePageItem> homePageItems = homePage.getItems();
+        List<HomePageProductItem> homePageProductItems = homePage.getItems();
         String homePageDescription;
         String productPageDescription;
         SoftAssert softAssert = new SoftAssert();
-        for (int i = 0; i <= homePageItems.size() - 1; i++) {
-            homePageDescription = homePageItems.get(i).getItemDescription();
-            ProductPage productPage = homePageItems.get(i).clickItemName();
+        for (int i = 0; i <= homePageProductItems.size() - 1; i++) {
+            homePageDescription = homePageProductItems.get(i).getItemDescription();
+            ProductPage productPage = homePageProductItems.get(i).clickItemName();
             productPageDescription = productPage.getItemDescription();
             productPage.clickBackToProducts();
             softAssert.assertEquals(homePageDescription, productPageDescription);
@@ -34,26 +35,23 @@ public class ProductTest extends SauceDemoWebTest {
     @Test
     public void itemsCanBeAddedToCartTest() {
         HomePage homePage = authService.login(R.TESTDATA.get("user_name_good"), R.TESTDATA.get("password"));
-        List<HomePageItem> homePageItems = homePage.getItems();
+        List<HomePageProductItem> homePageProductItems = homePage.getItems();
         List<String> addedItemsNames = new ArrayList<>();
-        for (int i = 0; i < R.TESTDATA.getInt("products_count"); i++) {
-            homePageItems.get(i).clickAddToCartButton();
-            String addedItemName = homePageItems.get(i).getItemName();
+        AddProductsToCartService.addToCart(homePageProductItems, productCount);
+        for (int i = 0; i < productCount; i++) {
+            String addedItemName = homePageProductItems.get(i).getItemName();
             addedItemsNames.add(addedItemName);
         }
-
         ShoppingCartPage cartPage = homePage.clickShoppingCartBtn();
-        List<ShoppingCartItem> cartItems = cartPage.getCartItems();
+        List<ShoppingCartProductItem> cartItems = cartPage.getCartItems();
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertEquals(addedItemsNames.size(), cartItems.size(), "The added products count doesn't match products count in cart");
-        for (ShoppingCartItem shoppingCartItem : cartItems) {
-            String cartItemName = shoppingCartItem.getItemName();
+        for (ShoppingCartProductItem shoppingCartProductItem : cartItems) {
+            String cartItemName = shoppingCartProductItem.getItemName();
             softAssert.assertTrue(addedItemsNames.stream()
                     .anyMatch(name -> name.equals(cartItemName)), "No matching item names found");
         }
         softAssert.assertAll();
     }
-
-
 }
 

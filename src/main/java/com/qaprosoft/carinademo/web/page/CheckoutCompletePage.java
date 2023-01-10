@@ -10,8 +10,22 @@ public class CheckoutCompletePage extends AbstractPage {
     @FindBy(xpath = "//*[@class='pony_express']")
     private ExtendedWebElement ponyExpressPic;
 
+    @FindBy(xpath = "//*[@class='complete-header']")
+    private ExtendedWebElement completeHeader;
+
+    @FindBy(xpath = "//*[@class='complete-text']")
+    private ExtendedWebElement completeText;
+
     public CheckoutCompletePage(WebDriver driver) {
         super(driver);
         setUiLoadedMarker(ponyExpressPic);
+    }
+
+    public String getCompleteHeaderText() {
+        return completeHeader.getText();
+    }
+
+    public String getCompleteText() {
+        return completeText.getText();
     }
 }

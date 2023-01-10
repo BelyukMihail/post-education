@@ -1,0 +1,18 @@
+package com.qaprosoft.carinademo.web.util;
+
+import org.apache.commons.lang3.RandomStringUtils;
+
+public class ValueGeneratorService {
+
+    public static int generateInteger(int range) {
+        return (int) (Math.random() * range);
+    }
+
+    public static String generateNumericString(int symbolCount) {
+        return RandomStringUtils.randomNumeric(symbolCount);
+    }
+
+    public static String generateAlphabeticString(int symbolCount) {
+        return RandomStringUtils.randomAlphabetic(symbolCount);
+    }
+}

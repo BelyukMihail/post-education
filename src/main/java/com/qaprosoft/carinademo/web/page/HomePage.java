@@ -2,7 +2,7 @@ package com.qaprosoft.carinademo.web.page;
 
 import com.qaprosoft.carina.core.foundation.webdriver.decorator.ExtendedWebElement;
 import com.qaprosoft.carina.core.gui.AbstractPage;
-import com.qaprosoft.carinademo.web.uiobject.HomePageItem;
+import com.qaprosoft.carinademo.web.uiobject.HomePageProductItem;
 import com.qaprosoft.carinademo.web.uiobject.MenuBar;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
@@ -12,7 +12,7 @@ import java.util.List;
 public class HomePage extends AbstractPage {
 
     @FindBy(xpath = "//*[@class='inventory_list']//*[@class='inventory_item']")
-    private List<HomePageItem> homePageItems;
+    private List<HomePageProductItem> homePageProductItems;
 
     @FindBy(xpath = "//*[@class='bm-menu']")
     private MenuBar menuBar;
@@ -31,8 +31,8 @@ public class HomePage extends AbstractPage {
         setUiLoadedMarker(logo);
     }
 
-    public List<HomePageItem> getItems() {
-        return homePageItems;
+    public List<HomePageProductItem> getItems() {
+        return homePageProductItems;
     }
 
     public ShoppingCartPage clickShoppingCartBtn() {

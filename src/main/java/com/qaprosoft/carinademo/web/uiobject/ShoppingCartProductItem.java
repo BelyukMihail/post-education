@@ -6,12 +6,12 @@ import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 
-public class ShoppingCartItem extends AbstractUIObject {
+public class ShoppingCartProductItem extends AbstractUIObject {
 
     @FindBy(xpath = ".//*[@class='inventory_item_name']")
     private ExtendedWebElement itemName;
 
-    public ShoppingCartItem(WebDriver driver, SearchContext searchContext) {
+    public ShoppingCartProductItem(WebDriver driver, SearchContext searchContext) {
         super(driver, searchContext);
     }
 
