@@ -5,7 +5,6 @@ import com.qaprosoft.carinademo.web.page.ProductPage;
 import com.qaprosoft.carinademo.web.page.ShoppingCartPage;
 import com.qaprosoft.carinademo.web.uiobject.HomePageProductItem;
 import com.qaprosoft.carinademo.web.uiobject.ShoppingCartProductItem;
-import com.qaprosoft.carinademo.web.util.AddProductsToCartService;
 import com.zebrunner.carina.utils.R;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -34,10 +33,11 @@ public class ProductTest extends SauceDemoWebTest {
 
     @Test
     public void itemsCanBeAddedToCartTest() {
+        int productCount = 5;
         HomePage homePage = authService.login(R.TESTDATA.get("user_name_good"), R.TESTDATA.get("password"));
         List<HomePageProductItem> homePageProductItems = homePage.getItems();
         List<String> addedItemsNames = new ArrayList<>();
-        AddProductsToCartService.addToCart(homePageProductItems, productCount);
+        addProductsToCartService.addToCart(productCount);
         for (int i = 0; i < productCount; i++) {
             String addedItemName = homePageProductItems.get(i).getItemName();
             addedItemsNames.add(addedItemName);
@@ -48,8 +48,7 @@ public class ProductTest extends SauceDemoWebTest {
         softAssert.assertEquals(addedItemsNames.size(), cartItems.size(), "The added products count doesn't match products count in cart");
         for (ShoppingCartProductItem shoppingCartProductItem : cartItems) {
             String cartItemName = shoppingCartProductItem.getItemName();
-            softAssert.assertTrue(addedItemsNames.stream()
-                    .anyMatch(name -> name.equals(cartItemName)), "No matching item names found");
+            softAssert.assertTrue(addedItemsNames.stream().anyMatch(name -> name.equals(cartItemName)), "No matching item names found");
         }
         softAssert.assertAll();
     }
