@@ -17,7 +17,7 @@
 		<carina-aws-s3.version>1.0.0</carina-aws-s3.version>
 		<java.version>11</java.version>
 		<zebrunner-agent.version>1.9.2</zebrunner-agent.version>
-		<suite>helloWorld</suite>
+		<suite>sauce-suite</suite>
 	</properties>
 
 		<repositories>
@@ -129,7 +129,7 @@
 					<argLine>-javaagent:${project.build.directory}/agent/zebrunner-agent.jar</argLine>
 					<useSystemClassLoader>false</useSystemClassLoader>
 					<suiteXmlFiles>
-						<suiteXmlFile>${project.build.directory}/test-classes/testng_suites/${suite}.xml</suiteXmlFile>
+						<suiteXmlFile>${project.build.directory}/test-classes/suite/${suite}.xml</suiteXmlFile>
 					</suiteXmlFiles>
 				</configuration>
 			</plugin>
