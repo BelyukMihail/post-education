@@ -26,12 +26,9 @@ public class CheckoutTest extends SauceAppTest {
         checkoutStepOne.enterLastName(lastName);
         checkoutStepOne.enterPostalCode(postalCode);
 
-        String firstNameFieldContent = checkoutStepOne.getFirstNameInput();
-        String lastNameFieldContent = checkoutStepOne.getLastNameInput();
-        String postalCodeFieldContent = checkoutStepOne.getPostalCodeInput();
-        Assert.assertEquals(firstName, firstNameFieldContent, "Field content doesn't match input data.");
-        Assert.assertEquals(lastName, lastNameFieldContent, "Field content doesn't match input data.");
-        Assert.assertEquals(postalCode, postalCodeFieldContent, "Field content doesn't match input data.");
+        Assert.assertEquals(firstName, checkoutStepOne.getFirstNameInput(), "Field content doesn't match input data.");
+        Assert.assertEquals(lastName, checkoutStepOne.getLastNameInput(), "Field content doesn't match input data.");
+        Assert.assertEquals(postalCode, checkoutStepOne.getPostalCodeInput(), "Field content doesn't match input data.");
 
         CheckoutStepTwoScreenBase checkoutStepTwo = checkoutStepOne.clickContinueBtn();
         CheckoutCompleteScreenBase checkoutComplete = checkoutStepTwo.clickFinishBtn();
