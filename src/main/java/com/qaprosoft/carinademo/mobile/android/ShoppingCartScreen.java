@@ -11,8 +11,6 @@ import java.util.List;
 @DeviceType(pageType = DeviceType.Type.ANDROID_PHONE, parentClass = ShoppingCartScreenBase.class)
 public class ShoppingCartScreen extends ShoppingCartScreenBase {
 
-    private static final String THIS_METHOD_IS_NOT_IMPLEMENTED_ON_ANDROID = "This method is not implemented on ANDROID";
-
     public ShoppingCartScreen(WebDriver driver) {
         super(driver);
     }

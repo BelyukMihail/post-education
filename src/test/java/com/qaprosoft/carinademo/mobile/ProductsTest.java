@@ -29,7 +29,7 @@ public class ProductsTest extends SauceAppTest {
         int[] productCounts = {1, 2, 3};
         HomeScreenBase homeAbstractPage = authService.authenticate(R.TESTDATA.get("user_name_good"), R.TESTDATA.get("password"));
         addToCartService.addProductsToCart(productCounts);
-        ShoppingCartScreenBase shoppingCart = homeAbstractPage.clickShoppingCartBtn(cartXcoordinate, cartYcoordinate);
+        ShoppingCartScreenBase shoppingCart = homeAbstractPage.clickShoppingCartBtn();
         int productInCartBeforeDelete = countService.countProductsInShoppingCart();
         shoppingCart.deleteProductsFromCartBySwipe();
         int productsInCartAfterDelete = countService.countProductsInShoppingCart();

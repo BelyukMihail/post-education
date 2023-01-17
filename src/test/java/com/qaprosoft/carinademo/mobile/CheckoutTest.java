@@ -15,7 +15,7 @@ public class CheckoutTest extends SauceAppTest {
         String expectedMessage = "THANK YOU FOR YOU ORDER";
         HomeScreenBase homeScreen = authService.authenticate(R.TESTDATA.get("user_name_good"), R.TESTDATA.get("password"));
         addToCartService.addProductsToCart(productsCount);
-        ShoppingCartScreenBase cart = homeScreen.clickShoppingCartBtn(cartXcoordinate, cartYcoordinate);
+        ShoppingCartScreenBase cart = homeScreen.clickShoppingCartBtn();
         CheckoutStepOneScreenBase checkoutStepOne = cart.clickCheckoutBtn();
 
         String firstName = ValueGeneratorService.generateAlphabeticString(symbolCount);

@@ -17,7 +17,7 @@ public abstract class HomeScreenBase extends SauceDemoAbstractScreenBase {
 
     public abstract List<String> getProductPrices();
 
-    public abstract ShoppingCartScreenBase clickShoppingCartBtn(int xCoordinates, int yCoordinates);
+    public abstract ShoppingCartScreenBase clickShoppingCartBtn();
 
     public abstract List<ExtendedWebElement> getProducts();
 

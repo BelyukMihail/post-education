@@ -7,7 +7,6 @@ import com.qaprosoft.carinademo.mobile.common.ShoppingCartScreenBase;
 import com.zebrunner.carina.utils.factory.DeviceType;
 import org.openqa.selenium.WebDriver;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -51,14 +50,16 @@ public class HomeScreen extends HomeScreenBase {
     }
 
     @Override
-    public ShoppingCartScreenBase clickShoppingCartBtn(int xCoordinates, int yCoordinates) {
-        tap(xCoordinates, yCoordinates);
+    public ShoppingCartScreenBase clickShoppingCartBtn() {
+        int cartXcoordinate = 340;
+        int cartYcoordinate = 70;
+        tap(cartXcoordinate, cartYcoordinate);
         return initPage(getDriver(), ShoppingCartScreenBase.class);
     }
 
     @Override
     public List<ExtendedWebElement> getProducts() {
-       return addToCartBtns;
+        return addToCartBtns;
     }
 
     @Override

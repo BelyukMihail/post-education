@@ -11,8 +11,6 @@ import java.util.List;
 @DeviceType(pageType = DeviceType.Type.ANDROID_PHONE, parentClass = HomeScreenBase.class)
 public class HomeScreen extends HomeScreenBase {
 
-    private static final String THIS_METHOD_IS_NOT_IMPLEMENTED_ON_ANDROID = "This method is not implemented on ANDROID";
-
     public HomeScreen(WebDriver driver) {
         super(driver);
     }
@@ -39,7 +37,7 @@ public class HomeScreen extends HomeScreenBase {
     }
 
     @Override
-    public ShoppingCartScreenBase clickShoppingCartBtn(int xCoordinates, int yCoordinates) {
+    public ShoppingCartScreenBase clickShoppingCartBtn() {
         throw new UnsupportedOperationException(THIS_METHOD_IS_NOT_IMPLEMENTED_ON_ANDROID);
     }
 

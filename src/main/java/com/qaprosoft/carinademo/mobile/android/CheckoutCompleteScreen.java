@@ -7,8 +7,6 @@ import org.openqa.selenium.WebDriver;
 @DeviceType(pageType = DeviceType.Type.ANDROID_PHONE, parentClass = CheckoutCompleteScreenBase.class)
 public class CheckoutCompleteScreen extends CheckoutCompleteScreenBase {
 
-    private static final String THIS_METHOD_IS_NOT_IMPLEMENTED_ON_ANDROID = "This method is not implemented on ANDROID";
-
     public CheckoutCompleteScreen(WebDriver driver) {
         super(driver);
     }

@@ -10,8 +10,6 @@ import org.openqa.selenium.WebDriver;
 @DeviceType(pageType = DeviceType.Type.IOS_PHONE, parentClass = CheckoutStepOneScreenBase.class)
 public class CheckoutStepOneScreen extends CheckoutStepOneScreenBase {
 
-    private static final String THIS_METHOD_IS_NOT_IMPLEMENTED_ON_IOS = "This method is not implemented on iOS";
-
     @ExtendedFindBy(iosClassChain = "**/XCUIElementTypeTextField[`name == 'test-First Name'`]")
     private ExtendedWebElement firstNameField;
 

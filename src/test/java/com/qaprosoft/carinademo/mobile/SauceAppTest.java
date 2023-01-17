@@ -11,7 +11,5 @@ public class SauceAppTest implements IAbstractTest {
     protected AuthMobileService authService = new AuthMobileService();
     protected CountMobileService countService = new CountMobileService();
     protected AddProductsToCartMobileService addToCartService = new AddProductsToCartMobileService();
-    protected int cartXcoordinate = 340;
-    protected int cartYcoordinate = 70;
 
 }

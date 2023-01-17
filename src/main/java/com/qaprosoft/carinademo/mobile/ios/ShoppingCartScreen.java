@@ -12,8 +12,6 @@ import java.util.List;
 @DeviceType(pageType = DeviceType.Type.IOS_PHONE, parentClass = ShoppingCartScreenBase.class)
 public class ShoppingCartScreen extends ShoppingCartScreenBase {
 
-    private static final String THIS_METHOD_IS_NOT_IMPLEMENTED_ON_IOS = "This method is not implemented on iOS";
-
     @ExtendedFindBy(iosClassChain = "**/XCUIElementTypeOther[`name = 'test-Item'`]")
     private List<ExtendedWebElement> products;
 

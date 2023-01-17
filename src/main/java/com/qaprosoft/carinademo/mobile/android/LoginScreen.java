@@ -8,8 +8,6 @@ import org.openqa.selenium.WebDriver;
 @DeviceType(pageType = DeviceType.Type.ANDROID_PHONE, parentClass = LoginScreenBase.class)
 public class LoginScreen extends LoginScreenBase {
 
-    private static final String THIS_METHOD_IS_NOT_IMPLEMENTED_ON_ANDROID = "This method is not implemented on ANDROID";
-
     public LoginScreen(WebDriver driver) {
         super(driver);
     }
