@@ -33,7 +33,6 @@ public class CheckoutTest extends SauceAppTest {
         CheckoutStepTwoScreenBase checkoutStepTwo = checkoutStepOne.clickContinueBtn();
         CheckoutCompleteScreenBase checkoutComplete = checkoutStepTwo.clickFinishBtn();
         Assert.assertTrue(checkoutComplete.isOpened(), "Failed to navigate to 'Checkout complete' screen");
-        String message = checkoutComplete.getCheckoutCompleteMessage();
-        Assert.assertEquals(message, expectedMessage);
+        Assert.assertEquals(checkoutComplete.getCheckoutCompleteMessage(), expectedMessage);
     }
 }
