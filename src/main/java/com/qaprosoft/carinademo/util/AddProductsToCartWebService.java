@@ -1,4 +1,4 @@
-package com.qaprosoft.carinademo.web.util;
+package com.qaprosoft.carinademo.util;
 
 import com.qaprosoft.carinademo.web.page.HomePage;
 import com.qaprosoft.carinademo.web.uiobject.HomePageProductItem;
@@ -6,7 +6,7 @@ import com.zebrunner.carina.utils.factory.ICustomTypePageFactory;
 
 import java.util.List;
 
-public class AddProductsToCartService implements ICustomTypePageFactory {
+public class AddProductsToCartWebService implements ICustomTypePageFactory {
 
     public void addToCart(int productCount) {
         HomePage homePage = new HomePage(getDriver());

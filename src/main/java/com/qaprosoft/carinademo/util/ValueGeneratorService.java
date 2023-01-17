@@ -1,4 +1,4 @@
-package com.qaprosoft.carinademo.web.util;
+package com.qaprosoft.carinademo.util;
 
 import org.apache.commons.lang3.RandomStringUtils;
 

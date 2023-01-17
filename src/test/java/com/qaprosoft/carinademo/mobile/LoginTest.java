@@ -7,12 +7,12 @@ import com.zebrunner.carina.utils.R;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class AuthenticationTest extends SauceAppTest {
+public class LoginTest extends SauceAppTest {
 
     @Test
-    public void openAppTest() {
+    public void loginCheckTest() {
         LoginScreenBase loginPage = new LoginScreen(getDriver());
-        HomeScreenBase homePage = loginPage.authenticate(R.TESTDATA.get("user_name_good"), R.TESTDATA.get("password"));
+        HomeScreenBase homePage = loginPage.login(R.TESTDATA.get("user_name_good"), R.TESTDATA.get("password"));
         Assert.assertTrue(homePage.isOpened(), "Failed to open home page.");
     }
 }

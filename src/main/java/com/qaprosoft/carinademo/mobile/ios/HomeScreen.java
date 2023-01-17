@@ -7,14 +7,15 @@ import com.qaprosoft.carinademo.mobile.common.ShoppingCartScreenBase;
 import com.zebrunner.carina.utils.factory.DeviceType;
 import org.openqa.selenium.WebDriver;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
 @DeviceType(pageType = DeviceType.Type.IOS_PHONE, parentClass = HomeScreenBase.class)
 public class HomeScreen extends HomeScreenBase {
 
-    @ExtendedFindBy(iosClassChain = "**/XCUIElementTypeOther[`name == 'test-Cart'`]/XCUIElementTypeOther")
-    private ExtendedWebElement shoppingCartBtn;
+    @ExtendedFindBy(iosClassChain = "**/XCUIElementTypeOther[`label == 'ADD TO CART'`]")
+    private List<ExtendedWebElement> addToCartBtns;
 
     @ExtendedFindBy(iosClassChain = "**/XCUIElementTypeStaticText[`label == 'PRODUCTS'`]")
     private ExtendedWebElement homePageTitle;
@@ -50,9 +51,14 @@ public class HomeScreen extends HomeScreenBase {
     }
 
     @Override
-    public ShoppingCartScreenBase clickShoppingCartBtn() {
-        shoppingCartBtn.click();
+    public ShoppingCartScreenBase clickShoppingCartBtn(int xCoordinates, int yCoordinates) {
+        tap(xCoordinates, yCoordinates);
         return initPage(getDriver(), ShoppingCartScreenBase.class);
+    }
+
+    @Override
+    public List<ExtendedWebElement> getProducts() {
+       return addToCartBtns;
     }
 
     @Override

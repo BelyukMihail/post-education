@@ -7,7 +7,6 @@ import com.qaprosoft.carinademo.mobile.common.LoginScreenBase;
 import com.zebrunner.carina.utils.factory.DeviceType;
 import org.openqa.selenium.WebDriver;
 
-
 @DeviceType(pageType = DeviceType.Type.IOS_PHONE, parentClass = LoginScreenBase.class)
 public class LoginScreen extends LoginScreenBase {
 
@@ -41,7 +40,7 @@ public class LoginScreen extends LoginScreenBase {
     }
 
     @Override
-    public HomeScreenBase authenticate(String userName, String password) {
+    public HomeScreenBase login(String userName, String password) {
         enterUserName(userName);
         enterPassword(password);
         return clickLoginBtn();

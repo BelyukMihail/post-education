@@ -14,6 +14,6 @@ public abstract class LoginScreenBase extends SauceDemoAbstractScreenBase {
 
     public abstract HomeScreenBase clickLoginBtn();
 
-    public abstract HomeScreenBase authenticate(String userName, String password);
+    public abstract HomeScreenBase login(String userName, String password);
 
 }

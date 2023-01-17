@@ -3,7 +3,7 @@
 <suite name="Sauce Suite" parallel="methods" thread-count="16">
     <test name="All tests">
         <classes>
-            <class name="com.qaprosoft.carinademo.web.AuthenticationTest"/>
+            <class name="com.qaprosoft.carinademo.web.LoginTest"/>
             <class name="com.qaprosoft.carinademo.web.CheckoutTest"/>
             <class name="com.qaprosoft.carinademo.web.MenuTest"/>
             <class name="com.qaprosoft.carinademo.web.ProductTest">
