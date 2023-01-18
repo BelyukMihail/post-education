@@ -47,6 +47,4 @@ public class HomePage extends AbstractPage {
     public MenuBar getMenuBar() {
         return menuBar;
     }
-
-
 }

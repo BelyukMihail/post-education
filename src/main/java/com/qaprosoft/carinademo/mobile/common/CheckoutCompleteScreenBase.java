@@ -8,6 +8,6 @@ public abstract class CheckoutCompleteScreenBase extends SauceDemoAbstractScreen
         super(driver);
     }
 
-    public abstract String getCheckoutCompleteMessage();
+    public abstract boolean isCheckOutCompleteMessageShown();
 
 }

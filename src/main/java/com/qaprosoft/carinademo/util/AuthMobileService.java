@@ -13,8 +13,7 @@ public class AuthMobileService implements ICustomTypePageFactory {
     }
 
     public HomeScreenBase loginBaseUser() {
-        LoginScreenBase loginPage = initPage(getDriver(), LoginScreenBase.class);
-        return loginPage.login(R.TESTDATA.get("user_name_good"), R.TESTDATA.get("password"));
+        return login(R.TESTDATA.get("user_name_good"), R.TESTDATA.get("password"));
     }
 }
 

@@ -13,10 +13,10 @@ public class LoginScreen extends LoginScreenBase {
     @ExtendedFindBy(iosClassChain = "**/XCUIElementTypeTextField[`name == 'test-Username'`]")
     private ExtendedWebElement userNameField;
 
-    @ExtendedFindBy(iosClassChain = "**/XCUIElementTypeSecureTextType[`name='Password'`]")
+    @ExtendedFindBy(iosClassChain = "**/XCUIElementTypeSecureTextType[`name == 'Password'`]")
     private ExtendedWebElement passwordField;
 
-    @ExtendedFindBy(iosClassChain = "**/XCUIElementTypeOther[`name='test-LOGIN'`]")
+    @ExtendedFindBy(iosClassChain = "**/XCUIElementTypeOther[`name == 'test-LOGIN'`]")
     private ExtendedWebElement loginBtn;
 
     public LoginScreen(WebDriver driver) {

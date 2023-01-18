@@ -31,10 +31,11 @@ public class ProductsTest extends SauceAppTest {
         HomeScreenBase homeAbstractPage = authService.loginBaseUser();
         homeAbstractPage.addProductsToCart(productCount);
         ShoppingCartScreenBase shoppingCart = homeAbstractPage.clickShoppingCartBtn();
-        int productsInCartBeforeDelete = shoppingCart.countProductsInCart();
+        Assert.assertTrue(shoppingCart.isOpened(), "Failed to navigate 'Shopping cart' screen.");
+        int productsInCartBeforeDelete = shoppingCart.getProductsInCartCount();
         shoppingCart.deleteProductsFromCartBySwipe();
-        int productsInCartAfterDelete = shoppingCart.countProductsInCart();
-        Assert.assertEquals(productsInCartBeforeDelete, productCount, "Products are not added to the cart");
+        int productsInCartAfterDelete = shoppingCart.getProductsInCartCount();
+        Assert.assertEquals(productsInCartBeforeDelete, productCount, "Products are not added to the cart.");
         Assert.assertEquals(productsInCartAfterDelete, 0, "Failed to delete products from cart.");
     }
 

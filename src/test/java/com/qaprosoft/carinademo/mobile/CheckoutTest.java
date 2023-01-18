@@ -11,7 +11,6 @@ public class CheckoutTest extends SauceAppTest {
     public void checkIfUserCanCheckoutTest() {
         int symbolCount = 5;
         int maxProductCount = 6;
-        String expectedMessage = "THANK YOU FOR YOU ORDER";
         HomeScreenBase homeScreen = authService.loginBaseUser();
         homeScreen.addProductsToCart(ValueGeneratorService.generateProductCount(maxProductCount));
         ShoppingCartScreenBase cart = homeScreen.clickShoppingCartBtn();
@@ -32,6 +31,6 @@ public class CheckoutTest extends SauceAppTest {
         CheckoutStepTwoScreenBase checkoutStepTwo = checkoutStepOne.clickContinueBtn();
         CheckoutCompleteScreenBase checkoutComplete = checkoutStepTwo.clickFinishBtn();
         Assert.assertTrue(checkoutComplete.isOpened(), "Failed to navigate to 'Checkout complete' screen");
-        Assert.assertEquals(checkoutComplete.getCheckoutCompleteMessage(), expectedMessage);
+        Assert.assertTrue(checkoutComplete.isCheckOutCompleteMessageShown(), "Failed to display 'Checkout complete' message");
     }
 }

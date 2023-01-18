@@ -4,7 +4,10 @@ import com.qaprosoft.carina.core.foundation.webdriver.decorator.ExtendedWebEleme
 import com.qaprosoft.carina.core.foundation.webdriver.locator.ExtendedFindBy;
 import com.qaprosoft.carinademo.mobile.common.HomeScreenBase;
 import com.qaprosoft.carinademo.mobile.common.ShoppingCartScreenBase;
+import com.qaprosoft.carinademo.util.PlatformService;
 import com.zebrunner.carina.utils.factory.DeviceType;
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
 
 import java.util.List;
@@ -27,6 +30,9 @@ public class HomeScreen extends HomeScreenBase {
 
     @ExtendedFindBy(iosClassChain = "**/XCUIElementTypeStaticText[`name == 'test-Price'`]")
     private List<ExtendedWebElement> productPrices;
+
+    @ExtendedFindBy(iosClassChain = "**/XCUIElementTypeOther[`name == 'test-Cart'`]")
+    private ExtendedWebElement shoppingCartBtn;
 
     public HomeScreen(WebDriver driver) {
         super(driver);
@@ -51,9 +57,13 @@ public class HomeScreen extends HomeScreenBase {
 
     @Override
     public ShoppingCartScreenBase clickShoppingCartBtn() {
-        int cartXcoordinate = 340;
-        int cartYcoordinate = 70;
-        tap(cartXcoordinate, cartYcoordinate);
+        if (PlatformService.isDevice(PlatformService.IPHONE_FOURTEEN)) {
+            Dimension dimension = shoppingCartBtn.getSize();
+            Point point = shoppingCartBtn.getLocation();
+            tapElementBottomLeft(point.x, point.y, dimension.height);
+        } else {
+            shoppingCartBtn.click();
+        }
         return initPage(getDriver(), ShoppingCartScreenBase.class);
     }
 

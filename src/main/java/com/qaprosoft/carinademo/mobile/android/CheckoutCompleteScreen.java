@@ -12,12 +12,7 @@ public class CheckoutCompleteScreen extends CheckoutCompleteScreenBase {
     }
 
     @Override
-    public String getCheckoutCompleteMessage() {
-        throw new UnsupportedOperationException(THIS_METHOD_IS_NOT_IMPLEMENTED_ON_ANDROID);
-    }
-
-    @Override
-    public boolean isOpened() {
+    public boolean isCheckOutCompleteMessageShown() {
         throw new UnsupportedOperationException(THIS_METHOD_IS_NOT_IMPLEMENTED_ON_ANDROID);
     }
 }

@@ -31,9 +31,4 @@ public class LoginScreen extends LoginScreenBase {
     public HomeScreenBase login(String userName, String password) {
         throw new UnsupportedOperationException(THIS_METHOD_IS_NOT_IMPLEMENTED_ON_ANDROID);
     }
-
-    @Override
-    public boolean isOpened() {
-        throw new UnsupportedOperationException(THIS_METHOD_IS_NOT_IMPLEMENTED_ON_ANDROID);
-    }
 }

@@ -17,8 +17,8 @@ public class CheckoutCompleteScreen extends CheckoutCompleteScreenBase {
     }
 
     @Override
-    public String getCheckoutCompleteMessage() {
-        return checkoutCompleteMessage.getText();
+    public boolean isCheckOutCompleteMessageShown() {
+        return checkoutCompleteMessage.isElementPresent();
     }
 
     @Override

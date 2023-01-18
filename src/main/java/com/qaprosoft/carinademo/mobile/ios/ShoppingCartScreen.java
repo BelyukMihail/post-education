@@ -12,10 +12,10 @@ import java.util.List;
 @DeviceType(pageType = DeviceType.Type.IOS_PHONE, parentClass = ShoppingCartScreenBase.class)
 public class ShoppingCartScreen extends ShoppingCartScreenBase {
 
-    @ExtendedFindBy(iosClassChain = "**/XCUIElementTypeOther[`name = 'test-Item'`]")
+    @ExtendedFindBy(iosClassChain = "**/XCUIElementTypeOther[`name == 'test-Item'`]")
     private List<ExtendedWebElement> products;
 
-    @ExtendedFindBy(iosClassChain = "**/XCUIElementTypeOther[`name = 'test-Delete'`]")
+    @ExtendedFindBy(iosClassChain = "**/XCUIElementTypeOther[`name == 'test-Delete'`]")
     private ExtendedWebElement binBtn;
 
     @ExtendedFindBy(iosClassChain = "**/XCUIElementTypeOther[`name == 'test-CHECKOUT'`]")
@@ -23,11 +23,6 @@ public class ShoppingCartScreen extends ShoppingCartScreenBase {
 
     public ShoppingCartScreen(WebDriver driver) {
         super(driver);
-    }
-
-    @Override
-    public List<ExtendedWebElement> getProductList() {
-        return products;
     }
 
     @Override
@@ -45,7 +40,7 @@ public class ShoppingCartScreen extends ShoppingCartScreenBase {
     }
 
     @Override
-    public int countProductsInCart() {
+    public int getProductsInCartCount() {
         return products.size();
     }
 
@@ -55,6 +50,6 @@ public class ShoppingCartScreen extends ShoppingCartScreenBase {
 
     @Override
     public boolean isOpened() {
-        throw new UnsupportedOperationException(THIS_METHOD_IS_NOT_IMPLEMENTED_ON_IOS);
+        return checkOutBtn.isElementPresent();
     }
 }
