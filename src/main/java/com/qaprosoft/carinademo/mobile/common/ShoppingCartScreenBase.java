@@ -17,4 +17,6 @@ public abstract class ShoppingCartScreenBase extends SauceDemoAbstractScreenBase
 
     public abstract CheckoutStepOneScreenBase clickCheckoutBtn();
 
+    public abstract int countProductsInCart();
+
 }

@@ -3,7 +3,7 @@ package com.qaprosoft.carinademo.mobile;
 import com.google.common.collect.Comparators;
 import com.qaprosoft.carinademo.mobile.common.HomeScreenBase;
 import com.qaprosoft.carinademo.mobile.common.ShoppingCartScreenBase;
-import com.zebrunner.carina.utils.R;
+import com.qaprosoft.carinademo.util.ValueGeneratorService;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -15,7 +15,7 @@ public class ProductsTest extends SauceAppTest {
 
     @Test
     public void sortProductPricesFromLowToHighTest() {
-        HomeScreenBase homePage = authService.authenticate(R.TESTDATA.get("user_name_good"), R.TESTDATA.get("password"));
+        HomeScreenBase homePage = authService.loginBaseUser();
         homePage.clickFilterBtn();
         homePage.clickPriceLowToHigh();
         List<Double> prices = homePage.getProductPrices().stream()
@@ -26,21 +26,22 @@ public class ProductsTest extends SauceAppTest {
 
     @Test
     public void deleteProductFromCartUsingSwipeTest() {
-        int[] productCounts = {1, 2, 3};
-        HomeScreenBase homeAbstractPage = authService.authenticate(R.TESTDATA.get("user_name_good"), R.TESTDATA.get("password"));
-        addToCartService.addProductsToCart(productCounts);
+        int maxProductCount = 6;
+        int productCount = ValueGeneratorService.generateProductCount(maxProductCount);
+        HomeScreenBase homeAbstractPage = authService.loginBaseUser();
+        homeAbstractPage.addProductsToCart(productCount);
         ShoppingCartScreenBase shoppingCart = homeAbstractPage.clickShoppingCartBtn();
-        int productInCartBeforeDelete = countService.countProductsInShoppingCart();
+        int productsInCartBeforeDelete = shoppingCart.countProductsInCart();
         shoppingCart.deleteProductsFromCartBySwipe();
-        int productsInCartAfterDelete = countService.countProductsInShoppingCart();
-        Assert.assertTrue(productInCartBeforeDelete == productCounts.length && productsInCartAfterDelete == 0,
-                "Failed to delete products from cart.");
+        int productsInCartAfterDelete = shoppingCart.countProductsInCart();
+        Assert.assertEquals(productsInCartBeforeDelete, productCount, "Products are not added to the cart");
+        Assert.assertEquals(productsInCartAfterDelete, 0, "Failed to delete products from cart.");
     }
 
     @Test
     public void checkIfProductPriceIsOfRightFormatTest() {
         String priceRegExp = "^\\$\\d\\.\\d{2}|\\$\\d{2}\\.\\d{2}$";
-        HomeScreenBase homeScreen = authService.authenticate(R.TESTDATA.get("user_name_good"), R.TESTDATA.get("password"));
+        HomeScreenBase homeScreen = authService.loginBaseUser();
         List<String> prices = homeScreen.getProductPrices();
         prices.forEach(price -> Assert.assertTrue(price.matches(priceRegExp), "Wrong price format. "));
     }

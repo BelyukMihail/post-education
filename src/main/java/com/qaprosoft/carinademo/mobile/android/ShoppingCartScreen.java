@@ -34,4 +34,9 @@ public class ShoppingCartScreen extends ShoppingCartScreenBase {
     public CheckoutStepOneScreenBase clickCheckoutBtn() {
         throw new UnsupportedOperationException(THIS_METHOD_IS_NOT_IMPLEMENTED_ON_ANDROID);
     }
+
+    @Override
+    public int countProductsInCart() {
+        throw new UnsupportedOperationException(THIS_METHOD_IS_NOT_IMPLEMENTED_ON_ANDROID);
+    }
 }

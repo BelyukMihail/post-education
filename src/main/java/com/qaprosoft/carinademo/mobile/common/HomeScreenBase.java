@@ -1,6 +1,5 @@
 package com.qaprosoft.carinademo.mobile.common;
 
-import com.qaprosoft.carina.core.foundation.webdriver.decorator.ExtendedWebElement;
 import org.openqa.selenium.WebDriver;
 
 import java.util.List;
@@ -19,7 +18,7 @@ public abstract class HomeScreenBase extends SauceDemoAbstractScreenBase {
 
     public abstract ShoppingCartScreenBase clickShoppingCartBtn();
 
-    public abstract List<ExtendedWebElement> getProducts();
+    public abstract void addProductsToCart(int productCount);
 
 }
 

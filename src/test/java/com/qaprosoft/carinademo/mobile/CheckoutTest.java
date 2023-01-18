@@ -2,7 +2,6 @@ package com.qaprosoft.carinademo.mobile;
 
 import com.qaprosoft.carinademo.mobile.common.*;
 import com.qaprosoft.carinademo.util.ValueGeneratorService;
-import com.zebrunner.carina.utils.R;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -10,11 +9,11 @@ public class CheckoutTest extends SauceAppTest {
 
     @Test
     public void checkIfUserCanCheckoutTest() {
-        int[] productsCount = {1, 2};
         int symbolCount = 5;
+        int maxProductCount = 6;
         String expectedMessage = "THANK YOU FOR YOU ORDER";
-        HomeScreenBase homeScreen = authService.authenticate(R.TESTDATA.get("user_name_good"), R.TESTDATA.get("password"));
-        addToCartService.addProductsToCart(productsCount);
+        HomeScreenBase homeScreen = authService.loginBaseUser();
+        homeScreen.addProductsToCart(ValueGeneratorService.generateProductCount(maxProductCount));
         ShoppingCartScreenBase cart = homeScreen.clickShoppingCartBtn();
         CheckoutStepOneScreenBase checkoutStepOne = cart.clickCheckoutBtn();
 

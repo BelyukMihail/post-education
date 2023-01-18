@@ -44,6 +44,11 @@ public class ShoppingCartScreen extends ShoppingCartScreenBase {
         return initPage(getDriver(), CheckoutStepOneScreenBase.class);
     }
 
+    @Override
+    public int countProductsInCart() {
+        return products.size();
+    }
+
     public void clickBinBtn() {
         binBtn.click();
     }

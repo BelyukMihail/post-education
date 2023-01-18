@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
 @DeviceType(pageType = DeviceType.Type.IOS_PHONE, parentClass = HomeScreenBase.class)
 public class HomeScreen extends HomeScreenBase {
 
-    @ExtendedFindBy(iosClassChain = "**/XCUIElementTypeOther[`label == 'ADD TO CART'`]")
+    @ExtendedFindBy(iosClassChain = "**/XCUIElementTypeOther[`name == 'test-ADD TO CART'`]")
     private List<ExtendedWebElement> addToCartBtns;
 
     @ExtendedFindBy(iosClassChain = "**/XCUIElementTypeStaticText[`label == 'PRODUCTS'`]")
@@ -58,8 +58,10 @@ public class HomeScreen extends HomeScreenBase {
     }
 
     @Override
-    public List<ExtendedWebElement> getProducts() {
-        return addToCartBtns;
+    public void addProductsToCart(int productCount) {
+        addToCartBtns.stream()
+                .limit(productCount)
+                .forEach(ExtendedWebElement::click);
     }
 
     @Override

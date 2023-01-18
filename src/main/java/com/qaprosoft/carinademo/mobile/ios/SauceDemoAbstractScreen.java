@@ -10,9 +10,4 @@ public abstract class SauceDemoAbstractScreen extends SauceDemoAbstractScreenBas
     public SauceDemoAbstractScreen(WebDriver driver) {
         super(driver);
     }
-
-    @Override
-    public boolean isOpened() {
-        throw new UnsupportedOperationException(THIS_METHOD_IS_NOT_IMPLEMENTED_ON_IOS);
-    }
 }

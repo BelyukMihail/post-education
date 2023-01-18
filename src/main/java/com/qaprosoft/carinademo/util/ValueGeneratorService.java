@@ -11,4 +11,8 @@ public class ValueGeneratorService {
     public static String generateAlphabeticString(int symbolCount) {
         return RandomStringUtils.randomAlphabetic(symbolCount);
     }
+
+    public static int generateProductCount(int maxCount){
+        return (int)(Math.random()*maxCount)+1;
+    }
 }

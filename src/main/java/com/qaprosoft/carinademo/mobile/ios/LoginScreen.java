@@ -45,9 +45,4 @@ public class LoginScreen extends LoginScreenBase {
         enterPassword(password);
         return clickLoginBtn();
     }
-
-    @Override
-    public boolean isOpened() {
-        return userNameField.isElementPresent();
-    }
 }

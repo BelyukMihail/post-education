@@ -1,6 +1,5 @@
 package com.qaprosoft.carinademo.mobile.android;
 
-import com.qaprosoft.carina.core.foundation.webdriver.decorator.ExtendedWebElement;
 import com.qaprosoft.carinademo.mobile.common.HomeScreenBase;
 import com.qaprosoft.carinademo.mobile.common.ShoppingCartScreenBase;
 import com.zebrunner.carina.utils.factory.DeviceType;
@@ -13,11 +12,6 @@ public class HomeScreen extends HomeScreenBase {
 
     public HomeScreen(WebDriver driver) {
         super(driver);
-    }
-
-    @Override
-    public boolean isOpened() {
-        throw new UnsupportedOperationException(THIS_METHOD_IS_NOT_IMPLEMENTED_ON_ANDROID);
     }
 
     @Override
@@ -42,7 +36,7 @@ public class HomeScreen extends HomeScreenBase {
     }
 
     @Override
-    public  List<ExtendedWebElement> getProducts() {
+    public void addProductsToCart(int productCount) {
         throw new UnsupportedOperationException(THIS_METHOD_IS_NOT_IMPLEMENTED_ON_ANDROID);
     }
 }
