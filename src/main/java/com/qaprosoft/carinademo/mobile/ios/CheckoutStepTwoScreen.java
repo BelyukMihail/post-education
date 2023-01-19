@@ -22,9 +22,4 @@ public class CheckoutStepTwoScreen extends CheckoutStepTwoScreenBase {
         finishBtn.click();
         return initPage(getDriver(), CheckoutCompleteScreenBase.class);
     }
-
-    @Override
-    public boolean isOpened() {
-        throw new UnsupportedOperationException(THIS_METHOD_IS_NOT_IMPLEMENTED_ON_IOS);
-    }
 }

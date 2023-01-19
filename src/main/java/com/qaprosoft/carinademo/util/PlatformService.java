@@ -5,8 +5,6 @@ import com.zebrunner.carina.utils.factory.DeviceType;
 
 public class PlatformService {
 
-    public static final String IPHONE_FOURTEEN = "iphone 14";
-
     public static DeviceType.Type getDeviceType() {
         return Device.currentDevice.get().getDeviceType();
     }
@@ -16,6 +14,6 @@ public class PlatformService {
     }
 
     public static boolean isDevice(String deviceName) {
-        return getDeviceName().toLowerCase().contains(deviceName);
+        return getDeviceName().toLowerCase().equals(deviceName);
     }
 }

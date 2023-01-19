@@ -13,6 +13,8 @@ import org.openqa.selenium.WebDriver;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import static com.qaprosoft.carinademo.mobile.DeviceName.IPHONE_14_PRO;
+
 @DeviceType(pageType = DeviceType.Type.IOS_PHONE, parentClass = HomeScreenBase.class)
 public class HomeScreen extends HomeScreenBase {
 
@@ -57,10 +59,10 @@ public class HomeScreen extends HomeScreenBase {
 
     @Override
     public ShoppingCartScreenBase clickShoppingCartBtn() {
-        if (PlatformService.isDevice(PlatformService.IPHONE_FOURTEEN)) {
+        if (PlatformService.isDevice(IPHONE_14_PRO.getDisplayName())) {
             Dimension dimension = shoppingCartBtn.getSize();
             Point point = shoppingCartBtn.getLocation();
-            tapElementBottomLeft(point.x, point.y, dimension.height);
+            tap(point.x + 1, point.y + dimension.height - 1);
         } else {
             shoppingCartBtn.click();
         }

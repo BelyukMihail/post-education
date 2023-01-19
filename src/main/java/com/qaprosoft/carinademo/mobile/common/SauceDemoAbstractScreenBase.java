@@ -1,6 +1,5 @@
 package com.qaprosoft.carinademo.mobile.common;
 
-import com.qaprosoft.carina.core.foundation.webdriver.device.Device;
 import com.qaprosoft.carina.core.gui.AbstractPage;
 import com.qaprosoft.carinademo.util.PlatformService;
 import com.zebrunner.carina.utils.factory.DeviceType;
@@ -26,9 +25,5 @@ public abstract class SauceDemoAbstractScreenBase extends AbstractPage implement
                 throw new UnsupportedOperationException(THIS_METHOD_IS_NOT_IMPLEMENTED_ON_ANDROID);
         }
         throw new UnsupportedOperationException(THIS_METHOD_IS_NOT_IMPLEMENTED_ON_PROVIDED_DEVICE);
-    }
-
-    public void tapElementBottomLeft(int pointXcoordinate, int pointYcoordinate, int elementHeight) {
-        tap(pointXcoordinate + 1, pointYcoordinate + elementHeight - 1);
     }
 }
