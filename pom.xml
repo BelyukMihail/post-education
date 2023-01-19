@@ -19,6 +19,7 @@
 		<zebrunner-agent.version>1.9.2</zebrunner-agent.version>
 		<suite-web>sauce-suite-web</suite-web>
 		<suite-mobile>sauce-suite-mobile</suite-mobile>
+		<suite-api>api-suite</suite-api>
 	</properties>
 
 		<repositories>
