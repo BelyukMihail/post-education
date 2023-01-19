@@ -1,7 +1,7 @@
 package com.qaprosoft.carinademo.web;
 
 import com.qaprosoft.carinademo.web.page.*;
-import com.qaprosoft.carinademo.web.util.ValueGeneratorService;
+import com.qaprosoft.carinademo.util.ValueGeneratorService;
 import com.zebrunner.carina.utils.R;
 import org.testng.Assert;
 import org.testng.annotations.Test;
