@@ -130,8 +130,7 @@
 					<argLine>-javaagent:${project.build.directory}/agent/zebrunner-agent.jar</argLine>
 					<useSystemClassLoader>false</useSystemClassLoader>
 					<suiteXmlFiles>
-						<suiteXmlFile>${project.build.directory}/test-classes/suite/${suite-web}.xml</suiteXmlFile>
-						<suiteXmlFile>${project.build.directory}/test-classes/${suite-mobile}.xml</suiteXmlFile>
+						<suiteXmlFile>${project.build.directory}/test-classes/suite/${suite}.xml</suiteXmlFile>
 					</suiteXmlFiles>
 				</configuration>
 			</plugin>
