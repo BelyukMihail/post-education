@@ -14,6 +14,6 @@ public class PlatformService {
     }
 
     public static boolean isDevice(String deviceName) {
-        return getDeviceName().toLowerCase().equals(deviceName);
+        return getDeviceName().equals(deviceName);
     }
 }

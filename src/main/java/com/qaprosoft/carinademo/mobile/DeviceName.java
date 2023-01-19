@@ -2,7 +2,7 @@ package com.qaprosoft.carinademo.mobile;
 
 public enum DeviceName {
 
-    IPHONE_14_PRO("iphone 14 pro");
+    IPHONE_14_PRO("iPhone 14 Pro");
 
     public final String displayName;
 
