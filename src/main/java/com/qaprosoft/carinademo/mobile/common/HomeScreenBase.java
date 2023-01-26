@@ -20,6 +20,8 @@ public abstract class HomeScreenBase extends SauceDemoAbstractScreenBase {
 
     public abstract void addProductsToCart(int productCount);
 
+    public abstract MenuScreenBase clickMenuBtn();
+
 }
 
 
