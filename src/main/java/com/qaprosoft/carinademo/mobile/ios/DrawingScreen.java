@@ -4,6 +4,9 @@ import com.qaprosoft.carina.core.foundation.webdriver.decorator.ExtendedWebEleme
 import com.qaprosoft.carina.core.foundation.webdriver.locator.ExtendedFindBy;
 import com.qaprosoft.carinademo.mobile.common.DrawingScreenBase;
 import com.zebrunner.carina.utils.factory.DeviceType;
+import io.appium.java_client.Setting;
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
 
 @DeviceType(pageType = DeviceType.Type.IOS_PHONE, parentClass = DrawingScreenBase.class)
@@ -27,11 +30,18 @@ public class DrawingScreen extends DrawingScreenBase {
 
     @Override
     public void drawPicture() {
-        swipe(259, 330, 138, 450, 500);
-        swipe(138, 450, 250, 450, 500);
-        swipe(250, 450, 140, 566, 500);
+        Point position = signaturePad.getLocation();
+        Dimension size = signaturePad.getSize();
+        int startX = position.x + size.width / 10;
+        int startY = position.y + size.height / 10;
+        int endX = startX * 5;
+        tap(startX, startY);
+        int pixelCount = 0;
+        for (int i = 0; i < 30; i++) {
+            swipe(startX, startY + pixelCount, endX, startY, 200);
+            pixelCount++;
+        }
     }
-
 
     @Override
     public void clickClearBtn() {
@@ -45,11 +55,15 @@ public class DrawingScreen extends DrawingScreenBase {
 
     @Override
     public boolean isEmptyPadPresent() {
+        setSetting(Setting.FIX_IMAGE_TEMPLATE_SCALE, true);
+        setSetting(Setting.IMAGE_MATCH_THRESHOLD, 0.7);
         return emptyDrawingArea.isElementPresent();
     }
 
     @Override
     public boolean isDrawingPresent() {
+        setSetting(Setting.FIX_IMAGE_TEMPLATE_SCALE, true);
+        setSetting(Setting.IMAGE_MATCH_THRESHOLD, 0.7);
         return drawing.isElementPresent();
     }
 }

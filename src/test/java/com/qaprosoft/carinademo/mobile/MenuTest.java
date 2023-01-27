@@ -17,6 +17,6 @@ public class MenuTest extends SauceAppTest {
         drawingScreen.drawPicture();
         Assert.assertTrue(drawingScreen.isDrawingPresent(), "There is no drawing found.");
         drawingScreen.clickClearBtn();
-        Assert.assertTrue(drawingScreen.isEmptyPadPresent(), "Drawing pad is not cleared");
+        Assert.assertTrue(drawingScreen.isEmptyPadPresent(), "Drawing area is not cleared");
     }
 }
