@@ -1,6 +1,7 @@
 package com.qaprosoft.carinademo.mobile.android;
 
 import com.qaprosoft.carinademo.mobile.common.HomeScreenBase;
+import com.qaprosoft.carinademo.mobile.common.MenuScreenBase;
 import com.qaprosoft.carinademo.mobile.common.ShoppingCartScreenBase;
 import com.zebrunner.carina.utils.factory.DeviceType;
 import org.openqa.selenium.WebDriver;
@@ -37,6 +38,11 @@ public class HomeScreen extends HomeScreenBase {
 
     @Override
     public void addProductsToCart(int productCount) {
+        throw new UnsupportedOperationException(THIS_METHOD_IS_NOT_IMPLEMENTED_ON_ANDROID);
+    }
+
+    @Override
+    public MenuScreenBase clickMenuBtn() {
         throw new UnsupportedOperationException(THIS_METHOD_IS_NOT_IMPLEMENTED_ON_ANDROID);
     }
 }

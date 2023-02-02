@@ -3,6 +3,7 @@ package com.qaprosoft.carinademo.mobile.ios;
 import com.qaprosoft.carina.core.foundation.webdriver.decorator.ExtendedWebElement;
 import com.qaprosoft.carina.core.foundation.webdriver.locator.ExtendedFindBy;
 import com.qaprosoft.carinademo.mobile.common.HomeScreenBase;
+import com.qaprosoft.carinademo.mobile.common.MenuScreenBase;
 import com.qaprosoft.carinademo.mobile.common.ShoppingCartScreenBase;
 import com.qaprosoft.carinademo.util.PlatformService;
 import com.zebrunner.carina.utils.factory.DeviceType;
@@ -35,6 +36,9 @@ public class HomeScreen extends HomeScreenBase {
 
     @ExtendedFindBy(iosClassChain = "**/XCUIElementTypeOther[`name == 'test-Cart'`]")
     private ExtendedWebElement shoppingCartBtn;
+
+    @ExtendedFindBy(iosClassChain = "**/XCUIElementTypeOther[`name == 'test-Menu'`]")
+    private ExtendedWebElement menuBtn;
 
     public HomeScreen(WebDriver driver) {
         super(driver);
@@ -74,6 +78,18 @@ public class HomeScreen extends HomeScreenBase {
         addToCartBtns.stream()
                 .limit(productCount)
                 .forEach(ExtendedWebElement::click);
+    }
+
+    @Override
+    public MenuScreenBase clickMenuBtn() {
+        if (PlatformService.isDevice(IPHONE_14_PRO.getDisplayName())) {
+            Dimension dimension = menuBtn.getSize();
+            Point point = menuBtn.getLocation();
+            tap(point.x + 1, point.y + dimension.height - 1);
+        } else {
+            menuBtn.click();
+        }
+        return initPage(getDriver(), MenuScreenBase.class);
     }
 
     @Override
