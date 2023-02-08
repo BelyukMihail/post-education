@@ -1,20 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite verbose="1" name="Sauce Suite"  >
-
-    <parameter name="suiteOwner" value="qpsdemo"/>
-    <parameter name="jenkinsJobName" value="Web-Demo-Test"/>
-    <parameter name="jenkinsJobType" value="web"/>
-    <parameter name="jenkinsEnvironments" value="DEMO"/>
-    <parameter name="jenkinsEmail" value="demo@qaprosoft.com"/>
-
-    <parameter name="jenkinsRegressionPipeline" value="web_regression, full_regression"/>
-
-    <parameter name="jenkinsRegressionMatrix_full_regression" value="browser:chrome; browser:firefox"/>
-    <parameter name="jenkinsJobExecutionOrder" value="1"/>
-    <parameter name="jenkinsJobExecutionMode" value="continue"/>
-    <parameter name="jenkinsAutoScreenshot" value="true"/>
-
+<suite name="Sauce Suite"  >
     <test name="All web tests" parallel="methods" thread-count="4">
         <classes>
             <class name="com.qaprosoft.carinademo.web.LoginTest"/>

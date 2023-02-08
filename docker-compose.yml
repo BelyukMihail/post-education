@@ -3,7 +3,7 @@ services:
 
   selenoid:
 
-    network_mode: bridge
+    network_mode: host
     image: aerokube/selenoid:latest
     container_name: selenoid
     ports:
@@ -18,7 +18,7 @@ services:
     command: [ "-conf", "/etc/selenoid/browsers.json", "-video-output-dir","${SELENOID_VIDEO}" ]
 
   selenoid-ui:
-    network_mode: bridge
+    network_mode: host
     image: aerokube/selenoid-ui:latest
     container_name: selenoid-ui
     links:
