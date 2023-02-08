@@ -1,10 +1,11 @@
 package com.qaprosoft.carinademo.api;
 
 import com.qaprosoft.apitools.validation.JsonComparatorContext;
+import com.qaprosoft.carina.core.foundation.IAbstractTest;
 import com.zebrunner.carina.utils.R;
 import org.testng.annotations.Test;
 
-public class EmployeesTest {
+public class EmployeesTest implements IAbstractTest {
 
     @Test
     public void getAllEmployeesTest() {
