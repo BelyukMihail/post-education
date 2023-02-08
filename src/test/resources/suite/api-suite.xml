@@ -3,8 +3,8 @@
 <suite name="API Tests" >
 
     <parameter name="suiteOwner" value="qpsdemo"/>
-    <parameter name="jenkinsJobName" value="carina-demo"/>
-    <parameter name="jenkinsJobType" value="api-suite"/>
+    <parameter name="jenkinsJobName" value="carina-demo2"/>
+    <parameter name="jenkinsJobType" value="api"/>
     <parameter name="jenkinsEmail" value="test@qaprosoft.com"/>
     <parameter name="jenkinsEnvironments" value="DEMO"/>
 
