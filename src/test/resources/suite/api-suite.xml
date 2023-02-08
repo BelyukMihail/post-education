@@ -8,8 +8,6 @@
     <parameter name="jenkinsEmail" value="test@qaprosoft.com"/>
     <parameter name="jenkinsEnvironments" value="DEMO"/>
 
-    <parameter name="jenkinsRegressionPipeline" value="nightly_regression, full_regression"/>
-
     <test name="All api tests" >
         <classes>
             <class name="com.qaprosoft.carinademo.api.EmployeesTest"/>
