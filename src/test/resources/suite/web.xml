@@ -8,6 +8,7 @@
     <parameter name="jenkinsEmail" value="test@qaprosoft.com"/>
     <parameter name="jenkinsEnvironments" value="DEMO"/>
     <parameter name="provider" value="selenium"/>
+    <parameter name="browser" value="chrome"/>
 
     <parameter name="jenkinsRegressionPipeline" value="web_regression, full_regression"/>
     <parameter name="jenkinsRegressionMatrix_full_regression" value="browser:chrome; browser:firefox"/>
