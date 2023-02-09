@@ -9,6 +9,9 @@
     <parameter name="jenkinsEnvironments" value="DEMO"/>
     <parameter name="provider" value="selenium"/>
 
+    <parameter name="jenkinsRegressionPipeline" value="web_regression, full_regression"/>
+    <parameter name="jenkinsRegressionMatrix_full_regression" value="browser:chrome; browser:firefox"/>
+
     <test name="All web tests" parallel="methods" thread-count="4">
         <classes>
             <class name="com.qaprosoft.carinademo.web.LoginTest"/>
