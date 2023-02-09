@@ -4,7 +4,8 @@
 
     <parameter name="jenkinsJobType" value="api"/>
 
-    <parameter name="jenkinsRegressionPipeline" value="api_regression, full_night_regression"/>
+    <parameter name="jenkinsRegressionPipeline" value="api_regression, full_regression"/>
+    <parameter name="jenkinsRegressionMatrix_full_regression" value="browser:chrome; browser:firefox"/>
 
     <test name="All api tests">
         <classes>
