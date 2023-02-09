@@ -2,12 +2,6 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="API Tests" >
 
-    <parameter name="suiteOwner" value="qpsdemo"/>
-    <parameter name="jenkinsJobName" value="carina-demo"/>
-    <parameter name="jenkinsJobType" value="api"/>
-    <parameter name="jenkinsEmail" value="test@qaprosoft.com"/>
-    <parameter name="jenkinsEnvironments" value="DEMO"/>
-
     <test name="All api tests" >
         <classes>
             <class name="com.qaprosoft.carinademo.api.EmployeesTest"/>
