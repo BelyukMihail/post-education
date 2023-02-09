@@ -2,6 +2,8 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="API Tests" >
 
+<parameter name="jenkinsRegressionPipeline" value="api_regression, full_regression"/>
+
     <test name="All api tests" >
         <classes>
             <class name="com.qaprosoft.carinademo.api.EmployeesTest"/>
