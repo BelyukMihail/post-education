@@ -2,16 +2,16 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Sauce-Suite">
 
-    <parameter name="suiteOwner" value="qpsdemo"/>
-    <parameter name="jenkinsJobName" value="web-test-start"/>
-    <parameter name="jenkinsJobType" value="web"/>
-    <parameter name="jenkinsEmail" value="test@qaprosoft.com"/>
-    <parameter name="jenkinsEnvironments" value="DEMO"/>
+<!--    <parameter name="suiteOwner" value="qpsdemo"/>-->
+<!--    <parameter name="jenkinsJobName" value="web-test-start"/>-->
+<!--    <parameter name="jenkinsJobType" value="web"/>-->
+<!--    <parameter name="jenkinsEmail" value="test@qaprosoft.com"/>-->
+<!--    <parameter name="jenkinsEnvironments" value="DEMO"/>-->
 
-    <parameter name="jenkinsRegressionPipeline" value="web_regression, full_regression"/>
-    <parameter name="jenkinsRegressionMatrix_full_regression" value="browser:chrome; browser:firefox"/>
+<!--    <parameter name="jenkinsRegressionPipeline" value="web_regression, full_regression"/>-->
+<!--    <parameter name="jenkinsRegressionMatrix_full_regression" value="browser:chrome; browser:firefox"/>-->
 
-    <test name="All tests" parallel="methods" thread-count="2">
+    <test name="All tests">
         <parameter name="browser" value="chrome"/>
         <classes>
             <class name="com.qaprosoft.carinademo.web.AuthenticationTest"/>
@@ -19,16 +19,6 @@
             <class name="com.qaprosoft.carinademo.web.MenuTest"/>
             <class name="com.qaprosoft.carinademo.web.ProductTest"/>
         </classes>
-    </test>
 
-    <test name="All tests" parallel="methods" thread-count="2">
-        <parameter name="browser" value="firefox"/>
-        <classes>
-            <class name="com.qaprosoft.carinademo.web.AuthenticationTest"/>
-            <class name="com.qaprosoft.carinademo.web.CheckoutTest"/>
-            <class name="com.qaprosoft.carinademo.web.MenuTest"/>
-            <class name="com.qaprosoft.carinademo.web.ProductTest"/>
-        </classes>
     </test>
-
 </suite>
