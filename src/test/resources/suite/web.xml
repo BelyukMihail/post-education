@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Sauce Suite">
+
+    <parameter name="suiteOwner" value="qpsdemo"/>
+    <parameter name="jenkinsJobName" value="web-test-start"/>
+    <parameter name="jenkinsJobType" value="web"/>
+    <parameter name="jenkinsEmail" value="test@qaprosoft.com"/>
+    <parameter name="jenkinsEnvironments" value="DEMO"/>
+    <parameter name="provider" value="selenium"/>
+    <parameter name="browser" value="chrome"/>
+
+    <parameter name="jenkinsRegressionPipeline" value="web_regression, full_regression"/>
+    <parameter name="jenkinsRegressionMatrix_full_regression" value="browser:chrome; browser:firefox"/>
+
     <test name="All tests">
         <classes>
             <class name="com.qaprosoft.carinademo.web.AuthenticationTest"/>
