@@ -11,7 +11,7 @@
 <!--    <parameter name="jenkinsRegressionPipeline" value="web_regression, full_regression"/>-->
 <!--    <parameter name="jenkinsRegressionMatrix_full_regression" value="browser:chrome; browser:firefox"/>-->
 
-    <test name="All tests" parallel="methods" thread-count="4" >
+    <test name="All tests Chrome" parallel="methods" thread-count="4" >
         <parameter name="browser" value="chrome"/>
         <classes>
             <class name="com.qaprosoft.carinademo.web.AuthenticationTest"/>
@@ -19,6 +19,16 @@
             <class name="com.qaprosoft.carinademo.web.MenuTest"/>
             <class name="com.qaprosoft.carinademo.web.ProductTest"/>
         </classes>
-
     </test>
+
+    <test name="All tests Firefox" parallel="methods" thread-count="4" >
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="com.qaprosoft.carinademo.web.AuthenticationTest"/>
+            <class name="com.qaprosoft.carinademo.web.CheckoutTest"/>
+            <class name="com.qaprosoft.carinademo.web.MenuTest"/>
+            <class name="com.qaprosoft.carinademo.web.ProductTest"/>
+        </classes>
+    </test>
+
 </suite>
