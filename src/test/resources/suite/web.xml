@@ -18,7 +18,7 @@
             <class name="com.qaprosoft.carinademo.web.LoginTest"/>
             <class name="com.qaprosoft.carinademo.web.CheckoutTest"/>
             <class name="com.qaprosoft.carinademo.web.MenuTest"/>
-<!--            <class name="com.qaprosoft.carinademo.web.ProductTest"/>-->
+            <class name="com.qaprosoft.carinademo.web.ProductTest"/>
         </classes>
     </test>
 </suite>
