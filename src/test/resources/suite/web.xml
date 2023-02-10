@@ -11,7 +11,7 @@
 <!--    <parameter name="jenkinsRegressionPipeline" value="web_regression, full_regression"/>-->
 <!--    <parameter name="jenkinsRegressionMatrix_full_regression" value="browser:chrome; browser:firefox"/>-->
 
-    <test name="All tests">
+    <test name="All tests" parallel="methods" thread-count="4" >
         <parameter name="browser" value="chrome"/>
         <classes>
             <class name="com.qaprosoft.carinademo.web.AuthenticationTest"/>
