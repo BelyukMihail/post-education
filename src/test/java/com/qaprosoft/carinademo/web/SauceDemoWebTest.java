@@ -13,8 +13,8 @@ public class SauceDemoWebTest implements IAbstractTest {
 
     @BeforeSuite
     public void testRailSetup() {
+        TestRail.enableRealTimeSync();
         TestRail.setSuiteId("S179");
         TestRail.setRunId("R613");
-        TestRail.enableRealTimeSync();
     }
 }
