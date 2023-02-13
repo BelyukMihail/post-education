@@ -21,7 +21,7 @@ public class ProductTest extends SauceDemoWebTest {
     public void testRailSetup() {
         TestRail.setSuiteId("S180");
         TestRail.setRunName("First run");
-        TestRail.setRunId("123");
+        TestRail.setRunId("R608");
         TestRail.setAssignee("MihBel");
     }
 
