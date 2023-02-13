@@ -20,6 +20,7 @@ public class ProductTest extends SauceDemoWebTest {
     @BeforeSuite
     public void testRailSetup() {
         TestRail.setSuiteId("S179");
+        TestRail.enableRealTimeSync();
         TestRail.setRunName("First run");
     }
 
