@@ -17,17 +17,8 @@ import java.util.List;
 
 public class ProductTest extends SauceDemoWebTest {
 
-    @BeforeSuite
-    public void testRailSetup() {
-        TestRail.setSuiteId("S180");
-        TestRail.setRunName("First run");
-        TestRail.setRunId("R608");
-        TestRail.enableRealTimeSync();
-        TestRail.setAssignee("MihBel");
-    }
-
     @Test
-    @TestRailCaseId("C3495")
+    @TestRailCaseId("C3488")
     public void compareItemDescriptionTest() {
         HomePage homePage = authService.login(R.TESTDATA.get("user_name_good"), R.TESTDATA.get("password"));
         List<HomePageProductItem> homePageProductItems = homePage.getItems();
@@ -45,7 +36,7 @@ public class ProductTest extends SauceDemoWebTest {
     }
 
     @Test
-    @TestRailCaseId("C3496")
+    @TestRailCaseId("C3489")
     public void itemsCanBeAddedToCartTest() {
         int productCount = 5;
         HomePage homePage = authService.login(R.TESTDATA.get("user_name_good"), R.TESTDATA.get("password"));

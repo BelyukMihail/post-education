@@ -13,17 +13,8 @@ import org.testng.asserts.SoftAssert;
 
 public class CheckoutTest extends SauceDemoWebTest {
 
-    @BeforeSuite
-    public void testRailSetup() {
-        TestRail.setSuiteId("S180");
-        TestRail.setRunName("First run");
-        TestRail.enableRealTimeSync();
-        TestRail.setRunId("R608");
-        TestRail.setAssignee("MihBel");
-    }
-
     @Test
-    @TestRailCaseId("C3497")
+    @TestRailCaseId("C3490")
     public void checkIfUserCanCheckoutTest() {
         String completeHeaderText = "THANK YOU FOR YOUR ORDER";
         String completeText = "Your order has been dispatched, and will arrive just as fast as the pony can get there!";

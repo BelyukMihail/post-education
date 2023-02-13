@@ -11,17 +11,8 @@ import org.testng.annotations.Test;
 
 public class LoginTest extends SauceDemoWebTest {
 
-    @BeforeSuite
-    public void testRailSetup() {
-        TestRail.setSuiteId("S180");
-        TestRail.setRunName("First run");
-        TestRail.setRunId("R608");
-        TestRail.enableRealTimeSync();
-        TestRail.setAssignee("MihBel");
-    }
-
     @Test
-    @TestRailCaseId("C3494")
+    @TestRailCaseId("C3487")
     public void loginTest() {
         LoginPage loginPage = new LoginPage(getDriver());
         HomePage homePage = loginPage.authenticate(R.TESTDATA.get("user_name_good"), R.TESTDATA.get("password"));

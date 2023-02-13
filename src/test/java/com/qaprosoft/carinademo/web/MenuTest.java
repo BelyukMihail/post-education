@@ -12,17 +12,8 @@ import org.testng.annotations.Test;
 
 public class MenuTest extends SauceDemoWebTest {
 
-    @BeforeSuite
-    public void testRailSetup() {
-        TestRail.setSuiteId("S180");
-        TestRail.setRunName("First run");
-        TestRail.setRunId("R608");
-        TestRail.enableRealTimeSync();
-        TestRail.setAssignee("MihBel");
-    }
-
     @Test
-    @TestRailCaseId("C3498")
+    @TestRailCaseId("C3491")
     public void checkIfAboutLinkWorksTest() {
         HomePage homePage = authService.login(R.TESTDATA.get("user_name_good"), R.TESTDATA.get("password"));
         homePage.clickMenuBtn();
