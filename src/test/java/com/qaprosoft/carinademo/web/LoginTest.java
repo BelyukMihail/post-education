@@ -11,13 +11,6 @@ import org.testng.annotations.Test;
 
 public class LoginTest extends SauceDemoWebTest {
 
-    @BeforeSuite
-    public void testRailSetup() {
-        TestRail.setSuiteId("S179");
-        TestRail.enableRealTimeSync();
-        TestRail.setRunName("First run");
-    }
-
     @Test
     @TestRailCaseId("C3487")
     public void loginTest() {

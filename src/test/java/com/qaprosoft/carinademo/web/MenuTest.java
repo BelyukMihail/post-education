@@ -12,13 +12,6 @@ import org.testng.annotations.Test;
 
 public class MenuTest extends SauceDemoWebTest {
 
-    @BeforeSuite
-    public void testRailSetup() {
-        TestRail.setSuiteId("S179");
-        TestRail.enableRealTimeSync();
-        TestRail.setRunName("First run");
-    }
-
     @Test
     @TestRailCaseId("C3491")
     public void checkIfAboutLinkWorksTest() {

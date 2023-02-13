@@ -10,9 +10,10 @@ public class SauceDemoWebTest implements IAbstractTest {
 
     @BeforeSuite
     public void testRailSetup() {
-        TestRail.setSuiteId("");
+        TestRail.setSuiteId("179");
+        TestRail.setRunId("613");
+        TestRail.enableRealTimeSync();
         TestRail.setRunName("First run");
-        TestRail.setAssignee("MihBel");
     }
 
     protected AuthService authService = new AuthService();
