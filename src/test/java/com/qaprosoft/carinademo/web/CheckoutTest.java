@@ -1,15 +1,27 @@
 package com.qaprosoft.carinademo.web;
 
+import com.qaprosoft.carina.core.foundation.report.testrail.TestRailCases;
 import com.qaprosoft.carinademo.web.page.*;
 import com.qaprosoft.carinademo.web.util.ValueGeneratorService;
+import com.zebrunner.agent.core.annotation.TestRailCaseId;
+import com.zebrunner.agent.core.registrar.TestRail;
 import com.zebrunner.carina.utils.R;
 import org.testng.Assert;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 public class CheckoutTest extends SauceDemoWebTest {
 
+    @BeforeSuite
+    public void testRailSetup() {
+        TestRail.setSuiteId("S180");
+        TestRail.setRunName("First run");
+        TestRail.setAssignee("MihBel");
+    }
+
     @Test
+    @TestRailCaseId("C3497")
     public void checkIfUserCanCheckoutTest() {
         String completeHeaderText = "THANK YOU FOR YOUR ORDER";
         String completeText = "Your order has been dispatched, and will arrive just as fast as the pony can get there!";

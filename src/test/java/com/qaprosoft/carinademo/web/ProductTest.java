@@ -5,7 +5,10 @@ import com.qaprosoft.carinademo.web.page.ProductPage;
 import com.qaprosoft.carinademo.web.page.ShoppingCartPage;
 import com.qaprosoft.carinademo.web.uiobject.HomePageProductItem;
 import com.qaprosoft.carinademo.web.uiobject.ShoppingCartProductItem;
+import com.zebrunner.agent.core.annotation.TestRailCaseId;
+import com.zebrunner.agent.core.registrar.TestRail;
 import com.zebrunner.carina.utils.R;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
@@ -14,7 +17,15 @@ import java.util.List;
 
 public class ProductTest extends SauceDemoWebTest {
 
+    @BeforeSuite
+    public void testRailSetup() {
+        TestRail.setSuiteId("S180");
+        TestRail.setRunName("First run");
+        TestRail.setAssignee("MihBel");
+    }
+
     @Test
+    @TestRailCaseId("C3495")
     public void compareItemDescriptionTest() {
         HomePage homePage = authService.login(R.TESTDATA.get("user_name_good"), R.TESTDATA.get("password"));
         List<HomePageProductItem> homePageProductItems = homePage.getItems();
@@ -32,6 +43,7 @@ public class ProductTest extends SauceDemoWebTest {
     }
 
     @Test
+    @TestRailCaseId("C3496")
     public void itemsCanBeAddedToCartTest() {
         int productCount = 5;
         HomePage homePage = authService.login(R.TESTDATA.get("user_name_good"), R.TESTDATA.get("password"));
