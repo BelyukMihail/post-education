@@ -13,6 +13,12 @@ import org.testng.asserts.SoftAssert;
 
 public class CheckoutTest extends SauceDemoWebTest {
 
+    @BeforeSuite
+    public void testRailSetup() {
+        TestRail.setRunName("First run");
+        TestRail.setAssignee("MihBel");
+    }
+
     @Test
     @TestRailCaseId("C3490")
     public void checkIfUserCanCheckoutTest() {

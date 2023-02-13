@@ -10,7 +10,7 @@ public class SauceDemoWebTest implements IAbstractTest {
 
     @BeforeSuite
     public void testRailSetup() {
-        TestRail.setSuiteId("S179");
+        TestRail.setSuiteId("");
         TestRail.setRunName("First run");
         TestRail.setAssignee("MihBel");
     }

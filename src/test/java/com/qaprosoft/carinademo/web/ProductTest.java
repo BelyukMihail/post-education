@@ -17,6 +17,12 @@ import java.util.List;
 
 public class ProductTest extends SauceDemoWebTest {
 
+    @BeforeSuite
+    public void testRailSetup() {
+        TestRail.setRunName("First run");
+        TestRail.setAssignee("MihBel");
+    }
+
     @Test
     @TestRailCaseId("C3488")
     public void compareItemDescriptionTest() {

@@ -12,6 +12,12 @@ import org.testng.annotations.Test;
 
 public class MenuTest extends SauceDemoWebTest {
 
+    @BeforeSuite
+    public void testRailSetup() {
+        TestRail.setRunName("First run");
+        TestRail.setAssignee("MihBel");
+    }
+
     @Test
     @TestRailCaseId("C3491")
     public void checkIfAboutLinkWorksTest() {
