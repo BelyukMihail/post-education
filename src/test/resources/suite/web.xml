@@ -14,7 +14,7 @@
     <test name="All tests Chrome" parallel="methods" thread-count="3" >
         <parameter name="browser" value="chrome"/>
         <classes>
-            <class name="com.qaprosoft.carinademo.web.AuthenticationTest"/>
+            <class name="com.qaprosoft.carinademo.web.LoginTest"/>
             <class name="com.qaprosoft.carinademo.web.CheckoutTest"/>
             <class name="com.qaprosoft.carinademo.web.MenuTest"/>
             <class name="com.qaprosoft.carinademo.web.ProductTest"/>
@@ -24,7 +24,7 @@
     <test name="All tests Firefox" parallel="methods" thread-count="3" >
         <parameter name="browser" value="chrome"/>
         <classes>
-            <class name="com.qaprosoft.carinademo.web.AuthenticationTest"/>
+            <class name="com.qaprosoft.carinademo.web.LoginTest"/>
             <class name="com.qaprosoft.carinademo.web.CheckoutTest"/>
             <class name="com.qaprosoft.carinademo.web.MenuTest"/>
             <class name="com.qaprosoft.carinademo.web.ProductTest"/>

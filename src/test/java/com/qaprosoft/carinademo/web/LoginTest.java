@@ -9,12 +9,13 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
-public class AuthenticationTest extends SauceDemoWebTest {
+public class LoginTest extends SauceDemoWebTest {
 
     @BeforeSuite
     public void testRailSetup() {
         TestRail.setSuiteId("S180");
         TestRail.setRunName("First run");
+        TestRail.setRunId("123");
         TestRail.setAssignee("MihBel");
     }
 
@@ -23,6 +24,6 @@ public class AuthenticationTest extends SauceDemoWebTest {
     public void loginTest() {
         LoginPage loginPage = new LoginPage(getDriver());
         HomePage homePage = loginPage.authenticate(R.TESTDATA.get("user_name_good"), R.TESTDATA.get("password"));
-        Assert.assertTrue(homePage.isPageOpened(), "Failed to load page, because page is missing or blocked.");
+        Assert.assertFalse(homePage.isPageOpened(), "Failed to load page, because page is missing or blocked.");
     }
 }
