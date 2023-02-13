@@ -16,6 +16,6 @@ public class LoginTest extends SauceDemoWebTest {
     public void loginTest() {
         LoginPage loginPage = new LoginPage(getDriver());
         HomePage homePage = loginPage.authenticate(R.TESTDATA.get("user_name_good"), R.TESTDATA.get("password"));
-        Assert.assertFalse(homePage.isPageOpened(), "Failed to load page, because page is missing or blocked.");
+        Assert.assertTrue(homePage.isPageOpened(), "Failed to load page, because page is missing or blocked.");
     }
 }

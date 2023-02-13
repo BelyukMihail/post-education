@@ -8,13 +8,13 @@ import org.testng.annotations.BeforeSuite;
 
 public class SauceDemoWebTest implements IAbstractTest {
 
+    protected AuthService authService = new AuthService();
+    protected AddProductsToCartService addProductsToCartService = new AddProductsToCartService();
+
     @BeforeSuite
     public void testRailSetup() {
         TestRail.setSuiteId("S179");
         TestRail.setRunId("R613");
         TestRail.enableRealTimeSync();
     }
-
-    protected AuthService authService = new AuthService();
-    protected AddProductsToCartService addProductsToCartService = new AddProductsToCartService();
 }
