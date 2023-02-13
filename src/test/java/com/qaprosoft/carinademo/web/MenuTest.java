@@ -17,6 +17,7 @@ public class MenuTest extends SauceDemoWebTest {
         TestRail.setSuiteId("S180");
         TestRail.setRunName("First run");
         TestRail.setRunId("R608");
+        TestRail.enableRealTimeSync();
         TestRail.setAssignee("MihBel");
     }
 
